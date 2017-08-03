@@ -1,42 +1,52 @@
-# Ruby on Rails チュートリアルのサンプルアプリケーション
-
-これは、次の教材で作られたサンプルアプリケーションです。   
-[*Ruby on Rails チュートリアル: 実例を使って Rails を学ぼう*](http://railstutorial.jp/)
-[Michael Hartl](http://www.michaelhartl.com/) 著
-
-## ライセンス
-
-[Ruby on Rails チュートリアル](http://railstutorial.jp/)内にあるすべてのソースコードは
-MIT ライセンスと Beerware ライセンスのもとに公開されています。
-詳細は [LICENSE.md](LICENSE.md) をご覧ください。
-
-## 使い方
-
-このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
-その後、次のコマンドで必要になる RubyGems をインストールします。
-
-```
-$ bundle install --without production
-```
-
-その後、データベースへのマイグレーションを実行します。
-
-```
-$ rails db:migrate
-```
-
-最後に、テストを実行してうまく動いているかどうか確認してください。
-
-```
-$ rails test
-```
-
-テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
-
-```
-$ rails server
-```
-
-詳しくは、[*Ruby on Rails チュートリアル*](http://railstutorial.jp/)を参考にしてください。
-
 # sample_app
+
+Rails チュートリアルのサンプルアプリケーションです  
+内容は第4版の第3章以降 ( https://railstutorial.jp/?version=5.0#walk-through )  
+
+### 事前準備
+
+- rubyをローカルに入れる
+- ruby 2.4は動作確認済み
+
+### 動作確認方法
+
+- ソースをクローン
+
+```
+$ git clone https://github.com/masa-nakano/sample_app.git
+```
+
+- gemを入れる
+
+```
+$ bundle install --path vendor/bundle
+```
+
+- DBをmigrateして動作確認用のデータを投入
+
+```
+$ bundle exec rails db:migrate
+$ bundle exec rails db:seed
+```
+
+- ローカルでサーバーを立ち上げる
+
+```
+$ bundle exec rails s
+```
+
+- ブラウザから http://localhost:3000/ に接続
+
+- 画面右上の Log in から以下のユーザーでログイン
+
+```
+Email: example@railstutorial.org  
+Password: foobar  
+```
+
+<br />
+
+### その他
+
+- developmentのDBはsqliteを使用しています。  
+- prodction用のherokuの設定は行っていません。  
